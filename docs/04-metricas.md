@@ -1,71 +1,88 @@
-# Avaliação e Métricas
+# 📊 Avaliação e Métricas
 
-## Como Avaliar seu Agente
+## 📌 Como Avaliar o Agente
 
-A avaliação pode ser feita de duas formas complementares:
+A avaliação do FinAI foi realizada combinando testes estruturados e simulações de uso real.
 
-1. **Testes estruturados:** Você define perguntas e respostas esperadas;
-2. **Feedback real:** Pessoas testam o agente e dão notas.
+Foram considerados três pilares principais:
+- Qualidade das respostas
+- Segurança das informações
+- Experiência do usuário
 
 ---
 
-## Métricas de Qualidade
+## 📈 Métricas de Qualidade
 
-| Métrica | O que avalia | Exemplo de teste |
+| Métrica | O que avalia | Como foi testado |
 |---------|--------------|------------------|
-| **Assertividade** | O agente respondeu o que foi perguntado? | Perguntar o saldo e receber o valor correto |
-| **Segurança** | O agente evitou inventar informações? | Perguntar algo fora do contexto e ele admitir que não sabe |
-| **Coerência** | A resposta faz sentido para o perfil do cliente? | Sugerir investimento conservador para cliente conservador |
-
-> [!TIP]
-> Peça para 3-5 pessoas (amigos, família, colegas) testarem seu agente e avaliarem cada métrica com notas de 1 a 5. Isso torna suas métricas mais confiáveis! Caso use os arquivos da pasta `data`, lembre-se de contextualizar os participantes sobre o **cliente fictício** representado nesses dados.
+| **Assertividade** | Se o agente responde corretamente às perguntas | Simulações de empréstimo e dúvidas sobre juros |
+| **Segurança** | Se o agente evita inventar informações | Perguntas fora do escopo e dados inexistentes |
+| **Coerência** | Se a resposta faz sentido dentro do contexto | Fluxo de conversa com simulação financeira |
 
 ---
 
-## Exemplos de Cenários de Teste
+## 🧪 Cenários de Teste
 
-Crie testes simples para validar seu agente:
+### Teste 1: Simulação de empréstimo
+- **Pergunta:** "Quero um empréstimo de 5 mil"
+- **Resposta esperada:** O agente solicita prazo e calcula a parcela
+- **Resultado:** [x] Correto  [ ] Incorreto  
 
-### Teste 1: Consulta de gastos
-- **Pergunta:** "Quanto gastei com alimentação?"
-- **Resposta esperada:** Valor baseado no `transacoes.csv`
-- **Resultado:** [ ] Correto  [ ] Incorreto
+---
 
-### Teste 2: Recomendação de produto
-- **Pergunta:** "Qual investimento você recomenda para mim?"
-- **Resposta esperada:** Produto compatível com o perfil do cliente
-- **Resultado:** [ ] Correto  [ ] Incorreto
+### Teste 2: Explicação de conceito
+- **Pergunta:** "O que são juros?"
+- **Resposta esperada:** Explicação simples e clara
+- **Resultado:** [x] Correto  [ ] Incorreto  
+
+---
 
 ### Teste 3: Pergunta fora do escopo
 - **Pergunta:** "Qual a previsão do tempo?"
-- **Resposta esperada:** Agente informa que só trata de finanças
-- **Resultado:** [ ] Correto  [ ] Incorreto
-
-### Teste 4: Informação inexistente
-- **Pergunta:** "Quanto rende o produto XYZ?"
-- **Resposta esperada:** Agente admite não ter essa informação
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Resposta esperada:** Agente informa que não trata desse assunto
+- **Resultado:** [x] Correto  [ ] Incorreto  
 
 ---
 
-## Resultados
-
-Após os testes, registre suas conclusões:
-
-**O que funcionou bem:**
-- [Liste aqui]
-
-**O que pode melhorar:**
-- [Liste aqui]
+### Teste 4: Entrada inválida
+- **Pergunta:** "abc"
+- **Resposta esperada:** Solicitar input válido
+- **Resultado:** [x] Correto  [ ] Incorreto  
 
 ---
 
-## Métricas Avançadas (Opcional)
+## 📊 Resultados
 
-Para quem quer explorar mais, algumas métricas técnicas de observabilidade também podem fazer parte da sua solução, como:
+### ✅ O que funcionou bem:
+- Fluxo de simulação funcionando corretamente
+- Respostas claras e fáceis de entender
+- Boa condução da conversa com o usuário
+- Tratamento de erros simples
 
-- Latência e tempo de resposta;
-- Consumo de tokens e custos;
-- Logs e taxa de erros.
+---
 
-Ferramentas especializadas em LLMs, como [LangWatch](https://langwatch.ai/) e [LangFuse](https://langfuse.com/), são exemplos que podem ajudar nesse monitoramento. Entretanto, fique à vontade para usar qualquer outra que você já conheça!
+### ⚠️ O que pode melhorar:
+- Melhor interpretação de linguagem natural
+- Integração com dados reais (transações e perfil)
+- Respostas mais personalizadas
+- Interface mais interativa
+
+---
+
+## 🔍 Considerações Finais
+
+O agente demonstrou bom desempenho em cenários básicos, especialmente em simulações financeiras e respostas diretas.
+
+Apesar de não utilizar um modelo de IA avançado, o sistema apresenta comportamento consistente, seguro e alinhado com os objetivos do projeto.
+
+---
+
+## 🚀 Métricas Avançadas (Opcional)
+
+Como melhoria futura, podem ser analisados:
+
+- Tempo de resposta do sistema
+- Evolução da interação do usuário
+- Taxa de sucesso nas simulações
+
+Ferramentas como LangFuse ou LangWatch podem ser utilizadas em versões mais avançadas do projeto.
