@@ -26,7 +26,13 @@ Ele utiliza conceitos de IA para responder dúvidas, simular empréstimos e orie
 
 ## ▶️ Como executar
 
-1. Instale as dependências:
+### 1. Instale as dependências:
+
 ```bash
 pip install streamlit
-```
+
+Execute o projeto:
+python -m streamlit run src/app.py
+
+Acesse no navegador:
+http://localhost:8501
