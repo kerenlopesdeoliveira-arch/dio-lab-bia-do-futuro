@@ -1,55 +1,100 @@
-# Base de Conhecimento
+# 📊 Base de Conhecimento do Agente
 
-## Dados Utilizados
+## 📌 Visão Geral
 
-Descreva se usou os arquivos da pasta `data`, por exemplo:
+A base de conhecimento do agente financeiro foi construída com dados simulados, permitindo respostas mais consistentes, seguras e contextualizadas.
 
-| Arquivo | Formato | Utilização no Agente |
-|---------|---------|---------------------|
-| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
-
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
+Esses dados ajudam o agente a entender o comportamento financeiro do usuário e oferecer orientações mais personalizadas, aproximando a experiência de um atendimento real.
 
 ---
 
-## Adaptações nos Dados
+## 📁 Fontes de Dados
 
-> Você modificou ou expandiu os dados mockados? Descreva aqui.
+### 1. Transações Financeiras (`transacoes.csv`)
 
-[Sua descrição aqui]
+Contém o histórico financeiro do usuário.
+
+**Principais informações:**
+- Data
+- Tipo (entrada/saída)
+- Categoria (alimentação, transporte, etc.)
+- Valor
+
+👉 Como o agente usa:
+- Identifica padrões de gastos
+- Calcula totais mensais
+- Responde perguntas como:
+  - "Com o que eu mais gasto?"
+  - "Quanto gastei esse mês?"
 
 ---
 
-## Estratégia de Integração
+### 2. Histórico de Atendimento (`historico_atendimento.csv`)
 
-### Como os dados são carregados?
-> Descreva como seu agente acessa a base de conhecimento.
+Registra interações anteriores do usuário com o sistema.
 
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
-
-### Como os dados são usados no prompt?
-> Os dados vão no system prompt? São consultados dinamicamente?
-
-[Sua descrição aqui]
+👉 Como o agente usa:
+- Mantém consistência nas respostas
+- Evita repetir informações
+- Melhora a experiência do usuário
 
 ---
 
-## Exemplo de Contexto Montado
+### 3. Perfil do Investidor (`perfil_investidor.json`)
 
-> Mostre um exemplo de como os dados são formatados para o agente.
+Define características do usuário:
 
-```
-Dados do Cliente:
-- Nome: João Silva
-- Perfil: Moderado
-- Saldo disponível: R$ 5.000
+- Nível de risco
+- Objetivos financeiros
+- Preferências
 
-Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
-...
-```
+👉 Como o agente usa:
+- Personaliza recomendações
+- Adapta linguagem
+- Evita sugestões incompatíveis
+
+---
+
+### 4. Produtos Financeiros (`produtos_financeiros.json`)
+
+Lista produtos disponíveis:
+
+- Empréstimos
+- Cartões de crédito
+- Investimentos
+
+👉 Como o agente usa:
+- Explica produtos
+- Sugere opções adequadas ao perfil
+- Apoia decisões financeiras
+
+---
+
+## 🧠 Estratégia de Uso dos Dados
+
+O agente combina diferentes fontes para gerar respostas mais completas:
+
+- Analisa transações para entender comportamento financeiro
+- Utiliza o perfil para personalizar respostas
+- Consulta produtos para sugerir soluções
+- Considera histórico para manter contexto
+
+Essa integração permite respostas mais inteligentes e próximas de um atendimento consultivo.
+
+---
+
+## 🔒 Segurança dos Dados
+
+- Todos os dados utilizados são simulados
+- Nenhuma informação sensível é coletada ou armazenada
+- O agente não realiza operações financeiras reais
+- Uso exclusivo para fins educativos e demonstrativos
+
+---
+
+## ⚠️ Limitações
+
+- Dados não refletem cenários reais completos
+- Não há atualização em tempo real
+- Análises são simplificadas
+- Não substitui sistemas financeiros reais
